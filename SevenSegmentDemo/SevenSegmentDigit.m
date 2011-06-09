@@ -68,9 +68,12 @@
 - (void)drawRect:(CGRect)rect
 {
     if (!digit) digit = [NSNumber numberWithInt:0];
+    CGFloat hx = 30.5f;
+    CGFloat hy = 10.0f;
+    CGFloat hz = 60.0f;
     CGFloat vOffSet = 80.0f;
     CGFloat hOffSet = 80.0f;
-    CGFloat filler = 3.0f;
+    CGFloat filler = 1.5f;
     
     CGContextRef context = UIGraphicsGetCurrentContext();
     
@@ -84,84 +87,84 @@
     NSArray * one = [NSArray arrayWithObjects:[NSNumber numberWithInt:1], [NSNumber numberWithInt:4], [NSNumber numberWithInt:5], [NSNumber numberWithInt:6], [NSNumber numberWithInt:8], [NSNumber numberWithInt:9], [NSNumber numberWithInt:0], nil]; 
     [self SSSetContextColorsFor:digit  with:one inContext:context];
     //1
-    CGContextMoveToPoint   (context, 30.5f, 30.5f);
-    CGContextAddLineToPoint(context, 40.5f, 40.5f);
-    CGContextAddLineToPoint(context, 40.5f, 100.5f);
-    CGContextAddLineToPoint(context, 30.5f, 110.5f);
-    CGContextAddLineToPoint(context, 20.5f, 100.5f);    
-    CGContextAddLineToPoint(context, 20.5f, 40.5f);
+    CGContextMoveToPoint   (context, hx - filler      , hx + filler);
+    CGContextAddLineToPoint(context, hx + hy - filler , hx + hy + filler);
+    CGContextAddLineToPoint(context, hx + hy - filler , hx + hy + hz + filler);
+    CGContextAddLineToPoint(context, hx - filler      , hx + hy + hz + hy + filler);
+    CGContextAddLineToPoint(context, hx - hy - filler , hx + hy + hz + filler);    
+    CGContextAddLineToPoint(context, hx - hy - filler , hx + hy + filler);
     CGContextClosePath(context);
     CGContextDrawPath(context, kCGPathFillStroke);
 
     NSArray * two = [NSArray arrayWithObjects:[NSNumber numberWithInt:2], [NSNumber numberWithInt:3], [NSNumber numberWithInt:5], [NSNumber numberWithInt:6], [NSNumber numberWithInt:7], [NSNumber numberWithInt:8], [NSNumber numberWithInt:9], [NSNumber numberWithInt:0], nil]; 
     [self SSSetContextColorsFor:digit  with:two inContext:context];
     //2
-    CGContextMoveToPoint   (context, 30.5f, 30.5f);
-    CGContextAddLineToPoint(context, 40.5f, 40.5f);
-    CGContextAddLineToPoint(context, 100.5f, 40.5f);
-    CGContextAddLineToPoint(context, 110.5f, 30.5f);
-    CGContextAddLineToPoint(context, 100.5f, 20.5f);    
-    CGContextAddLineToPoint(context, 40.5f, 20.5f);
+    CGContextMoveToPoint   (context, hx + filler               , hx - filler);
+    CGContextAddLineToPoint(context, hx + hy + filler          , hx + hy - filler);
+    CGContextAddLineToPoint(context, hx + hy + hz + filler     , hx + hy - filler);
+    CGContextAddLineToPoint(context, hx + hy + hz + hy + filler, hx - filler);
+    CGContextAddLineToPoint(context, hx + hy + hz + filler     , hx - hy - filler);    
+    CGContextAddLineToPoint(context, hx + hy + filler          , hx - hy - filler);
     CGContextClosePath(context);
     CGContextDrawPath(context, kCGPathFillStroke);
     
     NSArray * three = [NSArray arrayWithObjects:[NSNumber numberWithInt:2], [NSNumber numberWithInt:3], [NSNumber numberWithInt:4], [NSNumber numberWithInt:7], [NSNumber numberWithInt:8], [NSNumber numberWithInt:9], [NSNumber numberWithInt:0], nil]; 
     [self SSSetContextColorsFor:digit  with:three inContext:context];
     //3
-    CGContextMoveToPoint   (context, 30.5f + hOffSet, 30.5f);
-    CGContextAddLineToPoint(context, 40.5f + hOffSet, 40.5f);
-    CGContextAddLineToPoint(context, 40.5f + hOffSet, 100.5f);
-    CGContextAddLineToPoint(context, 30.5f + hOffSet, 110.5f);
-    CGContextAddLineToPoint(context, 20.5f + hOffSet, 100.5f);    
-    CGContextAddLineToPoint(context, 20.5f + hOffSet, 40.5f);
+    CGContextMoveToPoint   (context, hx + hOffSet  + filler * 2    , hx + filler);
+    CGContextAddLineToPoint(context, hx + hy + hOffSet + filler * 2, hx + hy + filler);
+    CGContextAddLineToPoint(context, hx + hy + hOffSet + filler * 2, hx + hy + hz + filler);
+    CGContextAddLineToPoint(context, hx + hOffSet + filler * 2     , hx + hy + hz + hy + filler);
+    CGContextAddLineToPoint(context, hx - hy + hOffSet + filler * 2, hx + hy + hz + filler);    
+    CGContextAddLineToPoint(context, hx - hy + hOffSet + filler * 2, hx + hy + filler);
     CGContextClosePath(context);
     CGContextDrawPath(context, kCGPathFillStroke);
     
     NSArray * four = [NSArray arrayWithObjects:[NSNumber numberWithInt:2], [NSNumber numberWithInt:3], [NSNumber numberWithInt:4], [NSNumber numberWithInt:5], [NSNumber numberWithInt:6], [NSNumber numberWithInt:8], [NSNumber numberWithInt:9], nil]; 
     [self SSSetContextColorsFor:digit  with:four inContext:context];
     //4
-    CGContextMoveToPoint   (context, 30.5f, 30.5f + vOffSet);
-    CGContextAddLineToPoint(context, 40.5f, 40.5f + vOffSet);
-    CGContextAddLineToPoint(context, 100.5f, 40.5f + vOffSet);
-    CGContextAddLineToPoint(context, 110.5f, 30.5f + vOffSet);
-    CGContextAddLineToPoint(context, 100.5f, 20.5f + vOffSet);    
-    CGContextAddLineToPoint(context, 40.5f, 20.5f + vOffSet);
+    CGContextMoveToPoint   (context, hx                , hx + vOffSet + filler * 2);
+    CGContextAddLineToPoint(context, hx + hy           , hx + hy + vOffSet + filler * 2);
+    CGContextAddLineToPoint(context, hx + hy + hz      , hx + hy + vOffSet + filler * 2);
+    CGContextAddLineToPoint(context, hx + hy + hz + hy , hx + vOffSet + filler * 2);
+    CGContextAddLineToPoint(context, hx + hy + hz      , hx - hy + vOffSet + filler * 2);    
+    CGContextAddLineToPoint(context, hx + hy           , hx - hy + vOffSet + filler * 2);
     CGContextClosePath(context);
     CGContextDrawPath(context, kCGPathFillStroke);
     
     NSArray * five = [NSArray arrayWithObjects:[NSNumber numberWithInt:1], [NSNumber numberWithInt:2], [NSNumber numberWithInt:6],  [NSNumber numberWithInt:8], [NSNumber numberWithInt:0], nil]; 
     [self SSSetContextColorsFor:digit  with:five inContext:context];
     //5
-    CGContextMoveToPoint   (context, 30.5f, 30.5f + vOffSet);
-    CGContextAddLineToPoint(context, 40.5f, 40.5f + vOffSet);
-    CGContextAddLineToPoint(context, 40.5f, 100.5f + vOffSet);
-    CGContextAddLineToPoint(context, 30.5f, 110.5f + vOffSet);
-    CGContextAddLineToPoint(context, 20.5f, 100.5f + vOffSet);    
-    CGContextAddLineToPoint(context, 20.5f, 40.5f + vOffSet);
+    CGContextMoveToPoint   (context, hx - filler, hx + vOffSet + filler * 3);
+    CGContextAddLineToPoint(context, hx + hy - filler, hx + hy + vOffSet + filler * 3);
+    CGContextAddLineToPoint(context, hx + hy - filler, hx + hy + hz + vOffSet + filler * 3);
+    CGContextAddLineToPoint(context, hx - filler, hx + hy + hz + hy + vOffSet + filler * 3);
+    CGContextAddLineToPoint(context, hx - hy - filler, hx + hy + hz + vOffSet + filler * 3);
+    CGContextAddLineToPoint(context, hx - hy - filler, hx + hy + vOffSet + filler * 3);
     CGContextClosePath(context);
     CGContextDrawPath(context, kCGPathFillStroke);
     
     NSArray * six = [NSArray arrayWithObjects:[NSNumber numberWithInt:2], [NSNumber numberWithInt:3], [NSNumber numberWithInt:5], [NSNumber numberWithInt:6], [NSNumber numberWithInt:8], [NSNumber numberWithInt:9], [NSNumber numberWithInt:0], nil]; 
     [self SSSetContextColorsFor:digit  with:six inContext:context];
     //6
-    CGContextMoveToPoint   (context, 30.5f, 30.5f + vOffSet * 2);
-    CGContextAddLineToPoint(context, 40.5f, 40.5f + vOffSet * 2);
-    CGContextAddLineToPoint(context, 100.5f, 40.5f + vOffSet * 2);
-    CGContextAddLineToPoint(context, 110.5f, 30.5f + vOffSet * 2);
-    CGContextAddLineToPoint(context, 100.5f, 20.5f + vOffSet * 2);    
-    CGContextAddLineToPoint(context, 40.5f, 20.5f + vOffSet * 2);
+    CGContextMoveToPoint   (context, hx, hx + vOffSet * 2 + filler * 4);
+    CGContextAddLineToPoint(context, hx + hy, hx + hy + vOffSet * 2 + filler * 4);
+    CGContextAddLineToPoint(context, hx + hy + hz, hx + hy + vOffSet * 2 + filler * 4);
+    CGContextAddLineToPoint(context, hx + hy + hz + hy, hx + vOffSet * 2 + filler * 4);
+    CGContextAddLineToPoint(context, hx + hy + hz, hx - hy + vOffSet * 2 + filler * 4);
+    CGContextAddLineToPoint(context, hx + hy, hx - hy + vOffSet * 2 + filler * 4);
     CGContextClosePath(context);
     CGContextDrawPath(context, kCGPathFillStroke);
     
     NSArray * seven = [NSArray arrayWithObjects:[NSNumber numberWithInt:3], [NSNumber numberWithInt:4], [NSNumber numberWithInt:5], [NSNumber numberWithInt:6], [NSNumber numberWithInt:7], [NSNumber numberWithInt:8], [NSNumber numberWithInt:9], [NSNumber numberWithInt:0], nil]; 
     [self SSSetContextColorsFor:digit  with:seven inContext:context];
     //7
-    CGContextMoveToPoint   (context, 30.5f + hOffSet, 30.5f + vOffSet);
-    CGContextAddLineToPoint(context, 40.5f + hOffSet, 40.5f + vOffSet);
-    CGContextAddLineToPoint(context, 40.5f + hOffSet, 100.5f + vOffSet);
-    CGContextAddLineToPoint(context, 30.5f + hOffSet, 110.5f + vOffSet);
-    CGContextAddLineToPoint(context, 20.5f + hOffSet, 100.5f + vOffSet);    
-    CGContextAddLineToPoint(context, 20.5f + hOffSet, 40.5f + vOffSet);
+    CGContextMoveToPoint   (context, hx + hOffSet  + filler * 2    , hx + vOffSet  + filler * 3);
+    CGContextAddLineToPoint(context, hx + hy + hOffSet + filler * 2, hx + hy + vOffSet + filler * 3);
+    CGContextAddLineToPoint(context, hx + hy + hOffSet + filler * 2, hx + hy + hz + vOffSet + filler * 3);
+    CGContextAddLineToPoint(context, hx + hOffSet + filler * 2     , hx + hy + hz + hy + vOffSet + filler * 3);
+    CGContextAddLineToPoint(context, hx - hy + hOffSet + filler * 2, hx + hy + hz + vOffSet + filler * 3);
+    CGContextAddLineToPoint(context, hx - hy + hOffSet + filler * 2, hx + hy + vOffSet + filler * 3);
     CGContextClosePath(context);    
     CGContextDrawPath(context, kCGPathFillStroke);
     
