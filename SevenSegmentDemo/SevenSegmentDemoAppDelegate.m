@@ -24,8 +24,9 @@
 
 - (void) timerWentOff:(NSTimer *) theTimer
 {
-    [((SevenSegmentDigit *)[[[[[self window] subviews] objectAtIndex:0] subviews] objectAtIndex:0] ) setDigit:(NSNumber *)[theTimer userInfo]];
-    [self setTimer:[NSTimer scheduledTimerWithTimeInterval:1.0f target:self selector:@selector(timerWentOff:) userInfo:    [NSNumber numberWithInt: 1 + [((NSNumber *)[theTimer userInfo]) intValue]] repeats:NO]];
+    //[((SevenSegmentDigit *)[[[[[self window] subviews] objectAtIndex:0] subviews] objectAtIndex:0] ) setDigit:(NSNumber *)[theTimer userInfo]];
+    [((SevenSegmentPanel *)[[[[[self window] subviews] objectAtIndex:0] subviews] objectAtIndex:0] ) setNumber:(NSNumber *)[theTimer userInfo]];
+    [self setTimer:[NSTimer scheduledTimerWithTimeInterval:0.3f target:self selector:@selector(timerWentOff:) userInfo:[NSNumber numberWithInt: 10 + 10 * [((NSNumber *)[theTimer userInfo]) intValue]] repeats:NO]];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application

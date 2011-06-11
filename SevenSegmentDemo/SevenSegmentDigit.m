@@ -48,8 +48,8 @@
 {
     if ([onDigits indexOfObject:dig]==NSNotFound)
     {
-        CGContextSetStrokeColorWithColor(context, [[UIColor colorWithWhite:0.5f alpha:0.5] CGColor]);
-        CGContextSetFillColorWithColor(context, [[UIColor colorWithWhite:0.2f alpha:1.0f] CGColor]);
+        CGContextSetStrokeColorWithColor(context, [[UIColor colorWithWhite:0.4f alpha:0.4] CGColor]);
+        CGContextSetFillColorWithColor(context, [[UIColor colorWithWhite:0.15f alpha:0.5f] CGColor]);
         CGContextSetShadowWithColor(context, CGSizeMake(1.5f, 1.5f), 10.0, [[UIColor colorWithWhite:1.0f alpha:0.3f] CGColor]);
     }
     else
@@ -70,7 +70,7 @@
 - (void)drawRect:(CGRect)rect
 {
     if (!digit) digit = [NSNumber numberWithInt:0];
-    [self setDotIsOn:YES];
+    //[self setDotIsOn:YES];
     CGFloat w = CGRectGetWidth([self frame]);
 //    CGFloat h = CGRectGetHeight([self frame]);
     CGFloat hx = w / 7.50f; // /10.0; //30.5f;

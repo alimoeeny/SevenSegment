@@ -8,10 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import "SevenSegmentDigit.h"
+#import "SevenSegmentPanel.h"
 
 @interface SevenSegmentDemoAppDelegate : UIResponder <UIApplicationDelegate>
 
-@property (strong, nonatomic) UIWindow *window;
-@property NSTimer * timer;
+@property (retain, nonatomic) UIWindow *window;
+@property (retain) NSTimer * timer;
 
 @end
