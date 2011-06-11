@@ -9,10 +9,11 @@
 #import <UIKit/UIKit.h>
 
 @interface SevenSegmentDigit : UIView
-    @property (nonatomic, retain) NSNumber * digit; 
+//    @property (nonatomic, retain) NSNumber * digit; 
+    @property (nonatomic, retain) NSString * character;
     @property BOOL dotIsOn;
     @property (nonatomic, retain) UIColor * mainColor; 
 
-- (void) SSSetContextColorsFor:(NSNumber *) dig with:(NSArray *) onDigits inContext:(CGContextRef) context;
-
+//- (void) SSSetContextColorsFor:(NSNumber *) dig with:(NSArray *) onDigits inContext:(CGContextRef) context;
+- (void) SSSetContextColorsFor:(NSString *) chr with:(NSArray *) onDigits inContext:(CGContextRef) context;
 @end

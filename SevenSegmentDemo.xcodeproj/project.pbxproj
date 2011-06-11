@@ -48,7 +48,7 @@
 		419834DC13A0378800798DBB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		419834DE13A0378800798DBB /* SevenSegmentDemo-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SevenSegmentDemo-Prefix.pch"; sourceTree = "<group>"; };
 		419834DF13A0378800798DBB /* SevenSegmentDemoAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SevenSegmentDemoAppDelegate.h; sourceTree = "<group>"; };
-		419834E013A0378800798DBB /* SevenSegmentDemoAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SevenSegmentDemoAppDelegate.m; sourceTree = "<group>"; };
+		419834E013A0378800798DBB /* SevenSegmentDemoAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = SevenSegmentDemoAppDelegate.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		419834E313A0378800798DBB /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
 		419834E613A0378800798DBB /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
 		419834E813A0378800798DBB /* SevenSegmentDemoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SevenSegmentDemoViewController.h; sourceTree = "<group>"; };
@@ -60,9 +60,9 @@
 		419834FF13A0378900798DBB /* SevenSegmentDemoTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SevenSegmentDemoTests.h; sourceTree = "<group>"; };
 		4198350113A0378900798DBB /* SevenSegmentDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SevenSegmentDemoTests.m; sourceTree = "<group>"; };
 		4198351113A03A3600798DBB /* SevenSegmentDigit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SevenSegmentDigit.h; sourceTree = "<group>"; };
-		4198351213A03A3600798DBB /* SevenSegmentDigit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SevenSegmentDigit.m; sourceTree = "<group>"; };
+		4198351213A03A3600798DBB /* SevenSegmentDigit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = SevenSegmentDigit.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		41BF8E4513A1808400C8B6BA /* SevenSegmentPanel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SevenSegmentPanel.h; sourceTree = "<group>"; };
-		41BF8E4613A1808400C8B6BA /* SevenSegmentPanel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SevenSegmentPanel.m; sourceTree = "<group>"; };
+		41BF8E4613A1808400C8B6BA /* SevenSegmentPanel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = SevenSegmentPanel.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
