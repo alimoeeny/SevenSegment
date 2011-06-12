@@ -1,5 +1,13 @@
+A seven segment display for iOS, a subclass of UIView and a UIButton subclass that shows a + and another one showing a - sign
+
 SevenSegment
 ===================
 SevenSegmentDigit is a UIView subclass displaying an individual Seven Segment digit. 
 
+SevenSegment Panel
+===================
+
+
+PlusButton and MinusButton
+===================
 
