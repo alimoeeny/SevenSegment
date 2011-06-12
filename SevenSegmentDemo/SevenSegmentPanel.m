@@ -27,10 +27,14 @@
 - (void) setUp
 {
     //remove all subwiews
-    [[self subviews] enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-        //NSLog(@"%@",obj);
-        [((UIView *)obj) removeFromSuperview];
-    } ];
+//    [[self subviews] enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+//        //NSLog(@"%@",obj);
+//        [((UIView *)obj) removeFromSuperview];
+//    } ];
+
+    for (int kachal=0; kachal < [[self subviews] count]; kachal++) {
+        [[[self subviews] objectAtIndex:kachal] removeFromSuperview];
+    }
     
     //Add new subview digits
     CGFloat w = CGRectGetWidth([self frame]);
@@ -50,6 +54,7 @@
         w = w - w * 0.2f;
         w = w / [[self digitCount] floatValue];
     }
+
     CGFloat a = 20;
     CGFloat b = 20;
     
@@ -71,11 +76,15 @@
         SevenSegmentDigit * ssd = [[SevenSegmentDigit alloc] initWithFrame:CGRectMake(a + w * i, b, w, h)];
         NSString * ch = [[NSString stringWithFormat:@"%c", [[[NSNumber numberWithInt:abs([[self number] intValue])] stringValue] characterAtIndex:i-offset]] retain];
         [ssd setCharacter:ch];
-        [ssd setAutoresizingMask: UIViewAutoresizingFlexibleWidth|
-                                  UIViewAutoresizingFlexibleLeftMargin|
-                                  UIViewAutoresizingFlexibleHeight|
-                                  UIViewAutoresizingFlexibleBottomMargin];
+        if (i == 0)
+            [ssd setAutoresizingMask: UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleBottomMargin];
+        else if ((i > 0) & ((i + 1) < [[self digitCount] intValue])) 
+            [ssd setAutoresizingMask: UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleBottomMargin];
+        else
+            [ssd setAutoresizingMask: UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleBottomMargin];
+
         [ssd setContentMode:UIViewContentModeRedraw];
+        [ssd.layer setNeedsDisplayOnBoundsChange:YES];
         [self addSubview:ssd];
     }
 }
@@ -83,6 +92,7 @@
 - (void) setNumber:(NSNumber *) newNumber
 {
     number = newNumber;
+    [number retain];
     digitCount = [NSNumber numberWithInt:[[number stringValue] length]];
     NSLog(@"%@ - %@", number, digitCount);
     [self setUp];

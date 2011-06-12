@@ -26,6 +26,8 @@
 		4198350213A0378900798DBB /* SevenSegmentDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4198350113A0378900798DBB /* SevenSegmentDemoTests.m */; };
 		4198351313A03A3600798DBB /* SevenSegmentDigit.m in Sources */ = {isa = PBXBuildFile; fileRef = 4198351213A03A3600798DBB /* SevenSegmentDigit.m */; };
 		41BF8E4713A1808400C8B6BA /* SevenSegmentPanel.m in Sources */ = {isa = PBXBuildFile; fileRef = 41BF8E4613A1808400C8B6BA /* SevenSegmentPanel.m */; };
+		41E5C50013A4219700A68E45 /* PlusButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 41E5C4FF13A4219700A68E45 /* PlusButton.m */; };
+		41E5C51313A43BB500A68E45 /* MinusButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 41E5C51213A43BB500A68E45 /* MinusButton.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +65,10 @@
 		4198351213A03A3600798DBB /* SevenSegmentDigit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = SevenSegmentDigit.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		41BF8E4513A1808400C8B6BA /* SevenSegmentPanel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SevenSegmentPanel.h; sourceTree = "<group>"; };
 		41BF8E4613A1808400C8B6BA /* SevenSegmentPanel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = SevenSegmentPanel.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		41E5C4FE13A4219700A68E45 /* PlusButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlusButton.h; sourceTree = "<group>"; };
+		41E5C4FF13A4219700A68E45 /* PlusButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlusButton.m; sourceTree = "<group>"; };
+		41E5C51113A43BB500A68E45 /* MinusButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MinusButton.h; sourceTree = "<group>"; };
+		41E5C51213A43BB500A68E45 /* MinusButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MinusButton.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -168,6 +174,10 @@
 		4198350B13A037D500798DBB /* SevenSegment */ = {
 			isa = PBXGroup;
 			children = (
+				41E5C51113A43BB500A68E45 /* MinusButton.h */,
+				41E5C51213A43BB500A68E45 /* MinusButton.m */,
+				41E5C4FE13A4219700A68E45 /* PlusButton.h */,
+				41E5C4FF13A4219700A68E45 /* PlusButton.m */,
 				4198351113A03A3600798DBB /* SevenSegmentDigit.h */,
 				4198351213A03A3600798DBB /* SevenSegmentDigit.m */,
 				41BF8E4513A1808400C8B6BA /* SevenSegmentPanel.h */,
@@ -287,6 +297,8 @@
 				419834EB13A0378800798DBB /* SevenSegmentDemoViewController.m in Sources */,
 				4198351313A03A3600798DBB /* SevenSegmentDigit.m in Sources */,
 				41BF8E4713A1808400C8B6BA /* SevenSegmentPanel.m in Sources */,
+				41E5C50013A4219700A68E45 /* PlusButton.m in Sources */,
+				41E5C51313A43BB500A68E45 /* MinusButton.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

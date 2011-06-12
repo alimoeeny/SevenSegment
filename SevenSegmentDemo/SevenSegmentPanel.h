@@ -12,7 +12,7 @@
 @interface SevenSegmentPanel : UIView
 
 @property (retain) NSNumber * digitCount;
-@property (retain) NSNumber * number;
+@property (nonatomic, retain) NSNumber * number;
 @property (retain) NSTimer * timer;
 
 

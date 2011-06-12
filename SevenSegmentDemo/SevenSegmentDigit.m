@@ -51,8 +51,8 @@
 //    if ([onDigits indexOfObject:dig]==NSNotFound)
     if ([onDigits indexOfObject:chr]==NSNotFound)
     {
-        CGContextSetStrokeColorWithColor(context, [[UIColor colorWithWhite:0.4f alpha:0.4] CGColor]);
-        CGContextSetFillColorWithColor(context, [[UIColor colorWithWhite:0.15f alpha:0.5f] CGColor]);
+        CGContextSetStrokeColorWithColor(context, [[UIColor colorWithWhite:0.3f alpha:0.4] CGColor]);
+        CGContextSetFillColorWithColor(context, [[UIColor colorWithWhite:0.15f alpha:0.3f] CGColor]);
         CGContextSetShadowWithColor(context, CGSizeMake(1.5f, 1.5f), 10.0, [[UIColor colorWithWhite:1.0f alpha:0.3f] CGColor]);
     }
     else
@@ -78,17 +78,29 @@
 
 - (void)drawRect:(CGRect)rect
 {
-    //if (!digit) digit = [NSNumber numberWithInt:0];
+    CGFloat h=0, w=0, hx=0, hy=0, hz=0, vOffSet=0, hOffSet=0, filler = 0, adj = 0.0f;
     if (!character) character = [NSString stringWithString:@"0"];
-    CGFloat w = CGRectGetWidth([self frame]);
-//    CGFloat h = CGRectGetHeight([self frame]);
-    CGFloat hx = w / 7.50f; // /10.0; //30.5f;
-    CGFloat hy = hx / 2.0f; // / 3.0f; //10.0f;
-    CGFloat hz = hx * 3; // * 2; //60.0f;
-    CGFloat vOffSet = hz + 2 * hy; //80.0f;
-    CGFloat hOffSet = hz + 2 * hy; //80.0f;
-    CGFloat filler = hx * 0.05f; // 1.5f;
-    
+    while ((w == 0) | ((hx + hy + hz + hy + vOffSet + filler * 3) > (h * 0.9f))) {
+        w = CGRectGetWidth([self frame]);
+        NSLog(@"w%f",w);
+        h = CGRectGetHeight([self frame]);
+        //    if (w>h) {
+        //        w = h / 2.0f;
+        //    }
+        hx = (w / 7.50f) - adj; // /10.0; //30.5f;
+        NSLog(@"hx%f",hx);
+        hy = hx / 2.0f; // / 3.0f; //10.0f;
+        NSLog(@"hy%f",hy);
+        hz = hx * 3; // * 2; //60.0f;
+        NSLog(@"hz%f",hz);
+        vOffSet = hz + 2 * hy; //80.0f;
+        NSLog(@"vOff%f",vOffSet);
+        hOffSet = hz + 2 * hy; //80.0f;
+        NSLog(@"hoff%f",hOffSet);
+        filler = hx * 0.05f; // 1.5f;
+        
+        adj += 5;
+    } 
     CGContextRef context = UIGraphicsGetCurrentContext();
     
     CGContextClearRect(context, [self frame]);
@@ -100,7 +112,7 @@
 
 //    NSArray * one = [NSArray arrayWithObjects:[NSNumber numberWithInt:1], [NSNumber numberWithInt:4], [NSNumber numberWithInt:5], [NSNumber numberWithInt:6], [NSNumber numberWithInt:8], [NSNumber numberWithInt:9], [NSNumber numberWithInt:0], nil]; 
 //    [self SSSetContextColorsFor:digit  with:one inContext:context];
-    NSArray * one = [NSArray arrayWithObjects:@"1", @"4", @"5", @"6", @"8", @"9", @"0", nil]; 
+    NSArray * one = [NSArray arrayWithObjects:@"4", @"5", @"6", @"8", @"9", @"0", nil]; 
     [self SSSetContextColorsFor:character  with:one inContext:context];
     //1
     CGContextMoveToPoint   (context, hx - filler      , hx + filler);
@@ -124,7 +136,7 @@
     CGContextClosePath(context);
     CGContextDrawPath(context, kCGPathFillStroke);
     
-    NSArray * three = [NSArray arrayWithObjects:@"2", @"3", @"4", @"7", @"8", @"9", @"0", nil]; 
+    NSArray * three = [NSArray arrayWithObjects:@"1", @"2", @"3", @"4", @"7", @"8", @"9", @"0", nil]; 
     [self SSSetContextColorsFor:character  with:three inContext:context];
     //3
     CGContextMoveToPoint   (context, hx + hOffSet  + filler * 1    , hx + filler);
@@ -148,7 +160,7 @@
     CGContextClosePath(context);
     CGContextDrawPath(context, kCGPathFillStroke);
     
-    NSArray * five = [NSArray arrayWithObjects:@"1", @"2", @"6",  @"8", @"0", nil]; 
+    NSArray * five = [NSArray arrayWithObjects:@"2", @"6",  @"8", @"0", nil]; 
     [self SSSetContextColorsFor:character with:five inContext:context];
     //5
     CGContextMoveToPoint   (context, hx - filler, hx + vOffSet + filler * 3);
@@ -172,7 +184,7 @@
     CGContextClosePath(context);
     CGContextDrawPath(context, kCGPathFillStroke);
     
-    NSArray * seven = [NSArray arrayWithObjects:@"3", @"4", @"5", @"6", @"7", @"8", @"9", @"0", nil]; 
+    NSArray * seven = [NSArray arrayWithObjects:@"1", @"3", @"4", @"5", @"6", @"7", @"8", @"9", @"0", nil]; 
     [self SSSetContextColorsFor:character with:seven inContext:context];
     //7
     CGContextMoveToPoint   (context, hx + hOffSet  + filler * 1    , hx + vOffSet  + filler * 3);
